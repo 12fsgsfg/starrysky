@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>404 - 找不到頁面</title>
+    <meta http-equiv="refresh" content="5; url=index.html">
+    <style>
+        body {
+            font-family: "Noto Sans TC", sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1 {
+            font-size: 80px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+    <h1>404</h1>
+    <p>喔不！你要找的頁面不存在。</p>
+    <p>即將在 <span class="countdown" id="countdown">5</span> 秒後返回首頁...</p>
+
+    <script>
+        let timeLeft = 5;
+        const countdownEl = document.getElementById("countdown");
+        const timer = setInterval(() => {
+            timeLeft--;
+            countdownEl.textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
